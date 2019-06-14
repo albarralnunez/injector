@@ -5,11 +5,47 @@ __version_tag__ = ''
 import platform
 from distutils.version import StrictVersion
 
-from injector.injector import AssistedBuilder, BaseKey, BaseMappingKey, BaseSequenceKey, Binder, Binding, BindingKey, \
-    BoundKey, CallError, CallableProvider, CircularDependency, ClassAssistedBuilder, ClassProvider, Error, Injector, \
-    InstanceProvider, Key, ListOfProviders, MapBindProvider, MappingKey, Module, MultiBindProvider, NoScope, Provider, \
-    ProviderOf, Scope, ScopeDecorator, SequenceKey, SingletonScope, ThreadLocalScope, UnknownArgument, UnknownProvider, \
-    UnsatisfiedRequirement, inject, noninjectable, noscope, provider, singleton, threadlocal
+from injector.injector import (
+    AssistedBuilder,
+    BaseKey,
+    BaseMappingKey,
+    BaseSequenceKey,
+    Binder,
+    Binding,
+    BindingKey,
+    BoundKey,
+    CallError,
+    CallableProvider,
+    CircularDependency,
+    ClassAssistedBuilder,
+    ClassProvider,
+    Error,
+    Injector,
+    InstanceProvider,
+    Key,
+    ListOfProviders,
+    MapBindProvider,
+    MappingKey,
+    Module,
+    MultiBindProvider,
+    NoScope,
+    Provider,
+    ProviderOf,
+    Scope,
+    ScopeDecorator,
+    SequenceKey,
+    SingletonScope,
+    ThreadLocalScope,
+    UnknownArgument,
+    UnknownProvider,
+    UnsatisfiedRequirement,
+    inject,
+    noninjectable,
+    noscope,
+    provider,
+    singleton,
+    threadlocal,
+)
 
 __all__ = [
     ProviderOf,

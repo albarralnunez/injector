@@ -14,9 +14,9 @@ class DummyClass:
 
 
 class DummyModule(Module):
-
     def configure(self, binder):
         from injector import aio_task
+
         binder.bind(DummyClass, scope=aio_task)
 
 

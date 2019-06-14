@@ -382,14 +382,14 @@ class Binder:
         elif isinstance(to, Provider):
             return to
         elif isinstance(
-                to,
-                (
-                        types.FunctionType,
-                        types.LambdaType,
-                        types.MethodType,
-                        types.BuiltinFunctionType,
-                        types.BuiltinMethodType,
-                ),
+            to,
+            (
+                types.FunctionType,
+                types.LambdaType,
+                types.MethodType,
+                types.BuiltinFunctionType,
+                types.BuiltinMethodType,
+            ),
         ):
             return CallableProvider(to)
         elif issubclass(type(to), type):

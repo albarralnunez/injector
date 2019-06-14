@@ -18,10 +18,33 @@ from typing import Any, NewType
 
 import pytest
 
-from injector import (AssistedBuilder, Binder, BindingKey, CallError, CircularDependency, ClassAssistedBuilder,
-                      ClassProvider, Error, Injector, InstanceProvider, Key, MappingKey, Module, ProviderOf, Scope,
-                      ScopeDecorator, SequenceKey, SingletonScope, UnknownArgument, UnsatisfiedRequirement, inject,
-                      noninjectable, provider, singleton, threadlocal)
+from injector import (
+    AssistedBuilder,
+    Binder,
+    BindingKey,
+    CallError,
+    CircularDependency,
+    ClassAssistedBuilder,
+    ClassProvider,
+    Error,
+    Injector,
+    InstanceProvider,
+    Key,
+    MappingKey,
+    Module,
+    ProviderOf,
+    Scope,
+    ScopeDecorator,
+    SequenceKey,
+    SingletonScope,
+    UnknownArgument,
+    UnsatisfiedRequirement,
+    inject,
+    noninjectable,
+    provider,
+    singleton,
+    threadlocal,
+)
 
 
 def prepare_basic_injection():
@@ -1053,6 +1076,7 @@ def test_assisted_building_is_supported():
 
 def test_raises_when_noninjectable_arguments_defined_with_invalid_arguments():
     with pytest.raises(UnknownArgument):
+
         class A:
             @inject
             @noninjectable('c')
@@ -1249,8 +1273,8 @@ def test_explicitly_passed_parameters_override_injectable_values():
         assert injector.call_with_injection(x.method, kwargs={'s': 'passed string'}) == 'passed string'
         assert injection_counter == 3
         assert (
-                injector.call_with_injection(x.method_typed_self, kwargs={'s': 'passed string'})
-                == 'passed string'
+            injector.call_with_injection(x.method_typed_self, kwargs={'s': 'passed string'})
+            == 'passed string'
         )
         assert injection_counter == 3
         assert injector.call_with_injection(function, kwargs={'s': 'passed string'}) == 'passed string'
