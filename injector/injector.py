@@ -60,7 +60,7 @@ lock = threading.RLock()
 
 def reraise(original: Exception, exception: Exception, maximum_frames: int = 1) -> None:
     prev_cls, prev, tb = sys.exc_info()
-    frames = inspect.getinnerframes(cast(types.TracebackType, tb))
+    frames = inspect.getinnerframes(tb)
     if len(frames) > maximum_frames:
         exception = original
     raise exception.with_traceback(tb)

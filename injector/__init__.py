@@ -1,9 +1,8 @@
+import sys
+
 __author__ = 'Alec Thomas <alec@swapoff.org>'
 __version__ = '0.17.0'
 __version_tag__ = ''
-
-import platform
-from distutils.version import StrictVersion
 
 from injector.injector import (
     AssistedBuilder,
@@ -89,7 +88,7 @@ __all__ = [
     Error,
 ]
 
-if StrictVersion(platform.python_version()) >= StrictVersion("3.7.0"):
+if sys.version_info > (3, 6):
     from injector.aio_task_scope import AioTaskScope, aio_task
 
     __all__ += [AioTaskScope, aio_task]

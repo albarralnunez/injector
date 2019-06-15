@@ -22,7 +22,7 @@ install:
   - if [[ "${TRAVIS_PYTHON_VERSION}" != "pypy"* &&  "${TRAVIS_PYTHON_VERSION}" != "3.5"* ]] ; then pip install black ; fi
 script:
   - py.test -vv --cov=injector --cov-branch --cov-report html --cov-report term
-  - if [[ "${TRAVIS_PYTHON_VERSION}" != "pypy"* ]] ; then mypy injector ; fi
+  - if [[ "${TRAVIS_PYTHON_VERSION}" != "pypy"* ]] ; then mypy injector --no-strict-optional; fi
   - if [[ "${TRAVIS_PYTHON_VERSION}" != "pypy"* && "${TRAVIS_PYTHON_VERSION}" != "3.5"* ]] ; then black --check . ; fi
 after_success:
   - coveralls

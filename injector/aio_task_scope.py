@@ -1,5 +1,5 @@
 import sys
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from injector import InstanceProvider, Provider, Scope, ScopeDecorator
 
@@ -8,15 +8,15 @@ if sys.version_info > (3, 6):
 
 
 class AioTaskScope(Scope):
-    cache: Dict[Any, ContextVar[InstanceProvider]] = None
+    cache: Optional[Dict[str, ContextVar[InstanceProvider]]] = None
 
     def cleanup(self) -> None:
-        self.cache: Dict[Any, ContextVar[InstanceProvider]] = {}
+        self.cache: Dict[str, ContextVar[InstanceProvider]] = {}
 
     def configure(self) -> None:
-        self.cache: Dict[Any, ContextVar[InstanceProvider]] = {}
+        self.cache: Dict[str, ContextVar[InstanceProvider]] = {}
 
-    def _get_or_set_context_var(self, key) -> ContextVar:
+    def _get_or_set_context_var(self, key: str) -> ContextVar:
         try:
             context_var = self.cache[key]
         except LookupError:
