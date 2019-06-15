@@ -1,10 +1,7 @@
-import sys
+from contextvars import ContextVar
 from typing import Any, Dict, Optional
 
 from injector import InstanceProvider, Provider, Scope, ScopeDecorator
-
-if sys.version_info > (3, 6):
-    from contextvars import ContextVar
 
 
 class AioTaskScope(Scope):
