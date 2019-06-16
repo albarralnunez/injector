@@ -5,7 +5,6 @@ __version__ = '0.17.0'
 __version_tag__ = ''
 
 
-
 from injector.injector import (
     AssistedBuilder,
     BaseKey,
@@ -92,4 +91,5 @@ __all__ = [
 
 if sys.version_info >= (3, 7):
     from injector.aio_task_scope import AioTaskScope, aio_task
+
     __all__ += [AioTaskScope, aio_task]
